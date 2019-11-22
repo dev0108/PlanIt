@@ -4,7 +4,9 @@ const postcssPresetEnv = require('postcss-preset-env');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const webpack = require('webpack');
 
-module.exports = (env, {mode}) => {
+module.exports = (env, {
+  mode
+}) => {
   console.log(mode);
   return {
     output: {
@@ -15,8 +17,7 @@ module.exports = (env, {mode}) => {
       hot: true
     },
     module: {
-      rules: [
-        {
+      rules: [{
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
@@ -48,9 +49,9 @@ module.exports = (env, {mode}) => {
         {
           test: /\.css$/,
           use: [
-            mode === 'production'
-              ? MiniCssExtractPlugin.loader
-              : 'style-loader',
+            mode === 'production' ?
+            MiniCssExtractPlugin.loader :
+            'style-loader',
             'css-loader',
             'resolve-url-loader',
             {
@@ -59,7 +60,9 @@ module.exports = (env, {mode}) => {
                 sourceMap: true,
                 plugins: [
                   require('postcss-import'),
-                  postcssPresetEnv({stage: 0})
+                  postcssPresetEnv({
+                    stage: 0
+                  })
                 ]
               }
             }

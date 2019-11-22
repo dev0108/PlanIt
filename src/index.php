@@ -7,6 +7,18 @@ $routes = array(
   'home' => array(
     'controller' => 'events',
     'action' => 'index'
+  ),
+  'search' => array(
+    'controller' => 'events',
+    'action' => 'search'
+  ),
+  'add' => array(
+    'controller' => 'events',
+    'action' => 'add'
+  ),
+  'detail' => array(
+    'controller' => 'events',
+    'action' => 'detail'
   )
 );
 

@@ -15,4 +15,19 @@ class eventsController extends Controller
     $this->set('title', 'Dashboard');
     $this->set('subtitle', 'Voeg een evenement toe en wij kijken voor de rest.');
   }
+
+  public function search()
+  {
+    $this->set('title', 'Zoeken');
+    $this->set('subtitle', 'Zoek tussen je evenementen');
+  }
+
+  public function add()
+  {
+    $this->set('title', 'Voeg een evenement toe');
+    $this->set('subtitle', 'We hebben de basis informatie nodig om van start te gaan.');
+  }
+
+  public function detail()
+  { }
 }

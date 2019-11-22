@@ -1,4 +1,4 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+//const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -23,7 +23,7 @@ module.exports = (env, {mode}) => {
             loader: 'babel-loader'
           }
         },
-        {
+        /*{
           test: /\.html$/,
           use: [
             {
@@ -33,7 +33,7 @@ module.exports = (env, {mode}) => {
               }
             }
           ]
-        },
+        },*/
         {
           test: /\.(jpe?g|png|svg|webp)$/,
           use: {
@@ -68,10 +68,10 @@ module.exports = (env, {mode}) => {
       ]
     },
     plugins: [
-      new HtmlWebPackPlugin({
+      /*new HtmlWebPackPlugin({
         template: './src/index.html',
         filename: './index.html'
-      }),
+      }),*/
       new MiniCssExtractPlugin({
         filename: 'style.[contenthash].css'
       }),
